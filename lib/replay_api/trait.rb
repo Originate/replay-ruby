@@ -1,9 +1,7 @@
 require 'replay_api/trait_properties'
 
 module ReplayApi
-  class Trait
-    include Virtus.model
-    include CompactAttributes
+  class Trait < Model
 
     attribute :distinct_id, String
     attribute :properties, TraitProperties, default: -> (_, _) { TraitProperties.new }

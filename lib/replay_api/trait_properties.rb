@@ -1,9 +1,7 @@
 require 'replay_api/address'
 
 module ReplayApi
-  class TraitProperties
-    include Virtus.model
-    include CompactAttributes
+  class TraitProperties < Model
 
     attribute :address, Address, default: -> (_, _) { Address.new }
     attribute :age, Integer

@@ -1,7 +1,5 @@
 module ReplayApi
-  class EventProperties
-    include Virtus.model
-    include CompactAttributes
+  class EventProperties < Model
 
     attribute :amount, Float
     attribute :app_version, String

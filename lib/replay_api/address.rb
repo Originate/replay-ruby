@@ -1,7 +1,5 @@
 module ReplayApi
-  class Address
-    include Virtus.model
-    include CompactAttributes
+  class Address < Model
 
     attribute :street, String
     attribute :city, String

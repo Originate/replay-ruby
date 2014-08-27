@@ -1,9 +1,7 @@
 require 'replay_api/event_properties'
 
 module ReplayApi
-  class Event
-    include Virtus.model
-    include CompactAttributes
+  class Event < Model
 
     attribute :event_name, String
     attribute :distinct_id, String
