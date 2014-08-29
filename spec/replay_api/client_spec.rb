@@ -11,7 +11,7 @@ module ReplayApi
 
     describe '#event' do
       let(:event) { Event.new }
-      let(:payload) { event.compact_attributes.merge(replay_key: 'my_key') }
+      let(:payload) { { replay_key: 'my_key', data: event.compact_attributes } }
 
       it 'yields the provided event' do
         expect { |b| client.event(event, &b) }.to yield_with_args(event)
@@ -25,7 +25,7 @@ module ReplayApi
 
     describe '#trait' do
       let(:trait) { Trait.new }
-      let(:payload) { trait.compact_attributes.merge(replay_key: 'my_key') }
+      let(:payload) { { replay_key: 'my_key', data: trait.compact_attributes } }
 
       it 'yields the provided trait' do
         expect { |b| client.trait(trait, &b) }.to yield_with_args(trait)

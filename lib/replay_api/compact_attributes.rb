@@ -13,6 +13,10 @@ module ReplayApi
           new_value = compact(value)
           next if new_value.empty?
           hash[key] = new_value
+        elsif value.is_a? Model
+          new_value = value.compact_attributes
+          next if new_value.empty?
+          hash[key] = new_value
         else
           hash[key] = value
         end

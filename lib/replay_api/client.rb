@@ -14,12 +14,12 @@ module ReplayApi
 
     def event(event=Event.new)
       yield event if block_given?
-      connection.post '/events', event.compact_attributes.merge(replay_key: configuration.replay_key)
+      connection.post '/events', payload(event.compact_attributes)
     end
 
     def trait(trait=Trait.new)
       yield trait if block_given?
-      connection.post '/traits', trait.compact_attributes.merge(replay_key: configuration.replay_key)
+      connection.post '/traits', payload(trait.compact_attributes)
     end
 
     private
@@ -35,6 +35,10 @@ module ReplayApi
     def protocol
       return 'http' unless configuration.ssl?
       'https'
+    end
+
+    def payload(data)
+      { replay_key: configuration.replay_key, data: data }
     end
   end
 end
