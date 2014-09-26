@@ -38,7 +38,7 @@ module ReplayApi
     end
 
     def payload(data)
-      { replay_key: configuration.replay_key, data: data }
+      { replay_key: configuration.replay_key }.merge data
     end
   end
 end
