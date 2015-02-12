@@ -21,16 +21,8 @@ module ReplayApi
     attribute :page_url, String
     attribute :past_event, Integer, default: 0
     attribute :phone, String
-    attribute :timestamp, Integer, default: -> (_, _) { clock.now }
     attribute :title, String
     attribute :username, String
 
-    def self.clock=(val)
-      @clock = val
-    end
-
-    def self.clock
-      @clock ||= Time
-    end
   end
 end

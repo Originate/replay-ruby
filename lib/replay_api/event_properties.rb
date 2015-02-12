@@ -20,14 +20,6 @@ module ReplayApi
     attribute :page_name, String
     attribute :page_url, String
     attribute :past_event, Integer, default: 0
-    attribute :timestamp, Integer, default: -> (_, _) { clock.now.to_i }
-
-    def self.clock=(val)
-      @clock = val
-    end
-
-    def self.clock
-      @clock ||= Time
-    end
+    
   end
 end

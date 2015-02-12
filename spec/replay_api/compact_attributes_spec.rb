@@ -19,7 +19,7 @@ module ReplayApi
         { attribute1: :value1, attribute2: { attribute3: :value3 } } => { attribute1: :value1, attribute2: { attribute3: :value3 } },
         { attribute1: :value1, attribute2: { attribute3: nil } } => { attribute1: :value1 },
         { attribute1: :value1, attribute2: { attribute3: :value3, attribute4: nil } } => { attribute1: :value1, attribute2: { attribute3: :value3 } },
-        { attribute1: :value1, attribute2: Event.new(event_name: 'Test Event', properties: { timestamp: 12345 }) } => { attribute1: :value1, attribute2: { event_name: 'Test Event', properties: { event_category: 'general', past_event: 0, timestamp: 12345 } } },
+        { attribute1: :value1, attribute2: Event.new(event_name: 'Test Event', properties: { }) } => { attribute1: :value1, attribute2: { event_name: 'Test Event', properties: { event_category: 'general', past_event: 0 } } },
       }
 
       test_cases.each do |input, output|
