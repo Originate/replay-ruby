@@ -8,6 +8,7 @@ require 'replay_api/configuration'
 require 'replay_api/event'
 require 'replay_api/trait'
 require 'replay_api/client'
+require 'replay_api/request_deliverer'
 
 module ReplayApi
 end

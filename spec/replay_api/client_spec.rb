@@ -2,12 +2,9 @@ require 'spec_helper'
 
 module ReplayApi
   describe Client do
-    subject(:client) { Client.new(configuration) }
-    let(:connection) { double :connection, post: nil }
+    subject(:client) { Client.new(configuration, deliverer) }
+    let(:deliverer) { double :deliverer, post: nil }
     let(:configuration) { Configuration.new.tap { |c| c.replay_key = 'my_key' } }
-    before do
-      client.connection = connection
-    end
 
     describe '#event' do
       let(:event) { Event.new }
@@ -19,7 +16,7 @@ module ReplayApi
 
       it 'posts the event' do
         client.event(event)
-        expect(connection).to have_received(:post).with('/events', payload)
+        expect(deliverer).to have_received(:post).with(uri: '/events', payload: payload)
       end
     end
 
@@ -33,7 +30,7 @@ module ReplayApi
 
       it 'posts the trait' do
         client.trait(trait)
-        expect(connection).to have_received(:post).with('/traits', payload)
+        expect(deliverer).to have_received(:post).with(uri: '/traits', payload: payload)
       end
     end
   end
