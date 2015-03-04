@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['support@replay.io']
   spec.summary       = %q{Ruby SDK for Replay.io API}
   spec.description   = %q{Ruby SDK for Replay.io API}
-  spec.homepage      = 'https://github.com/Originate/replay-gem'
+  spec.homepage      = 'https://github.com/Originate/replay-ruby'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
