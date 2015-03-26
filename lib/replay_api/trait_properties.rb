@@ -7,6 +7,7 @@ module ReplayApi
     attribute :age, Integer
     attribute :birthday, String
     attribute :avatar, String
+    attribute :company, String
     attribute :created_at, Integer
     attribute :description, String
     attribute :email, String
@@ -21,8 +22,6 @@ module ReplayApi
     attribute :page_url, String
     attribute :past_event, Integer, default: 0
     attribute :phone, String
-    attribute :title, String
-    attribute :username, String
 
   end
 end
