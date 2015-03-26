@@ -5,8 +5,8 @@ module ReplayApi
 
     attribute :address, Address, default: -> (_, _) { Address.new }
     attribute :age, Integer
-    attribute :birthday, String
     attribute :avatar, String
+    attribute :birthday, String
     attribute :company, String
     attribute :created_at, Integer
     attribute :description, String
