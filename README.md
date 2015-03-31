@@ -99,6 +99,7 @@ ReplayApi.configure do |config|
 end
 ```
 
+For predefined list refer to [event properties][2] and [trait properties][3].
 
 ## Contributing
 
@@ -110,3 +111,5 @@ end
 
 
   [1]: https://github.com/solnic/virtus
+  [2]: lib/replay_api/event_properties.rb
+  [3]: lib/replay_api/trait_properties.rb
