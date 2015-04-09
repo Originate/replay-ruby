@@ -11,12 +11,14 @@ module ReplayApi
   class Configuration
     attr_accessor :replay_key
     attr_accessor :replay_server
+    attr_accessor :replay_library
     attr_accessor :ssl
     attr_accessor :max_request_batch_size
     attr_accessor :max_request_batch_delay
 
     def initialize
       @replay_server = 'api.replay.io'
+      @replay_library = "Replay Ruby #{VERSION}"
       @ssl = true
       @max_request_batch_size = 100
       @max_request_batch_delay = 1
