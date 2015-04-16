@@ -26,7 +26,10 @@ module ReplayApi
     private
 
     def payload(data)
-      { replay_key: configuration.replay_key }.merge data
+      {
+        replay_key: configuration.replay_key,
+        replay_lib: configuration.replay_library
+      }.merge data
     end
   end
 end

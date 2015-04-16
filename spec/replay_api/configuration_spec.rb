@@ -8,6 +8,10 @@ module ReplayApi
       specify { expect(configuration.replay_server).to eq 'api.replay.io' }
     end
 
+    describe '#replay_library' do
+      specify { expect(configuration.replay_library).to match /^Replay Ruby \d+\.\d+\.\d+$/ }
+    end
+
     describe '#ssl' do
       specify { expect(configuration.ssl).to eq true }
     end
